@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Student Records</h2>
+    <table border="1">
+        <tr>
+            <th>Register Number</th>
+            <th>K1</th>
+            <th>K2</th>
+            <th>K3</th>
+            <th>K4</th>
+            <th>K5</th>
+            <th>Delete</th>
+        </tr>
+
+        {% for r in records %}
+        <tr>
+            <td>{{ r["Register Number"] }}</td>
+            <td>{{ r["K1"] }}</td>
+            <td>{{ r["K2"] }}</td>
+            <td>{{ r["K3"] }}</td>
+            <td>{{ r["K4"] }}</td>
+            <td>{{ r["K5"] }}</td>
+            <td><a href="/delete/{{ r['Register Number'] }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/export">Export to Excel</a>
+</body>
+</html>
